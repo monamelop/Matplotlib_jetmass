@@ -18,3 +18,8 @@ font.family: STIXGeneral
 hatch.linewidth: 2
 figure.facecolor: w
 savefig.bbox: tight
+legend.frameon: False
+
+
+#TeX
+text.usetex: True
