@@ -19,6 +19,7 @@ def JM(yodafile, obs):
     
     #normalization
     jet.scaleW(1/N_jets)
+    jet.rebin(2)
 
 
     x = np.asarray(jet.xVals())
