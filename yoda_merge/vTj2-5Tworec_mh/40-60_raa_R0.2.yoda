@@ -1,0 +1,9 @@
+BEGIN YODA_SCATTER1D_V2 /
+Variations: [""]
+Path: /
+Title: 
+Type: Scatter1D
+---
+# xval	  xerr-	 xerr+	
+0.000000e+00	0.000000e+00	0.000000e+00
+END YODA_SCATTER1D_V2

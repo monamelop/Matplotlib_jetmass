@@ -31,16 +31,22 @@ def JM(yodafile, obs):
 
 
 def COMP(mc, data):
+    
     # Encontre os valores de x que estão presentes em ambas as listas
     common_x = np.intersect1d(mc[0], data[0])
 
     # Encontre os índices correspondentes aos valores de x comuns
     arr_indices = np.where(np.isin(mc[0], common_x))[0]
     alice1_indices = np.where(np.isin(data[0], common_x))[0]
+    
+    # Use os índices para recuperar os valores dos erros de x correspondentes
+    
+    x_err_data = data[3][alice1_indices]
 
     # Use os índices para recuperar os valores de y correspondentes
     common_y_arr = mc[1][arr_indices]
-    common_y_alice1 = data[1][alice1_indices]   
+    common_y_alice1 = data[1][alice1_indices]
+    
     
 
     # Use os índices para recuperar as incertezas em y correspondentes
@@ -49,7 +55,6 @@ def COMP(mc, data):
 
     
     new_y = common_y_arr/common_y_alice1
-    
     
     # Calcular as incertezas relativas (delta x / x e delta y / y)
     relative_errors_arr = common_y_errors_arr / common_y_arr
@@ -62,5 +67,5 @@ def COMP(mc, data):
     
     
     
-    return [common_x, new_y, new_y_err]
+    return [common_x, new_y, new_y_err, x_err_data]
     
