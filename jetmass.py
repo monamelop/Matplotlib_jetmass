@@ -22,7 +22,7 @@ def JM(yodafile, obs):
     jet.rebin(2)
 
 
-    x = np.asarray(jet.xVals())+0.5
+    x = np.asarray(jet.xVals())
     y = np.asarray(jet.yVals())
     yerr = np.asarray((jet.yMaxs() - jet.yMins()) / 2)
     xerr = np.asarray((jet.xMaxs() - jet.xMins()) / 2)
